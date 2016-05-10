@@ -1,5 +1,14 @@
 schema "0001 initial" do
 
+  entity "Todo" do
+    string :title
+    boolean :completed
+    datetime :due_date
+
+    datetime :created_at
+    datetime :updated_at
+  end
+
   # Examples:
   #
   # entity "Person" do
