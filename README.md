@@ -5,13 +5,14 @@
 
 Scaffolding generator:
 * Command: `potion g scaffold todo title:string completed:boolean due_date:datetime`
-* Result: [Link to compare branch](#)
+* Expected result after generator: [Link to compare branch](#)
 
 Model generator:
 * Command: `potion g model todo title:string completed:boolean due_date:datetime`
-* Result: [Link to compare branch](#)
+* Expected result after generator: [Link to compare branch](#)
 
 DataTableScreen generator:
-* Move `cell` method to screen and call `cell_data` which accepts the model as an argument.
-* Command: `potion g data_table_screen todos`
-* Result: [Link to compare branch](#)
+* Don't use DataTableScreen! Use a regular table screen for easier customization.
+* Maybe deprecate DataTableScreen and change the generator? Or create a new `cdq_table_screen` generator.
+* Command: `potion g cdq_table_screen todos`
+* Expected result after generator: [Link to compare branch](#)

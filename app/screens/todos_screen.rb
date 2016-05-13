@@ -1,14 +1,31 @@
-class TodosScreen < PM::DataTableScreen
-  title "Your title here"
+class TodosScreen < PM::TableScreen
+  title "Todos"
   stylesheet TodosScreenStylesheet
 
-  # Specify the model used in this table. You may also specify an optional scope.
-  # model MyModel, scope: :sort_name
-  model Todo
-
   def on_load
+    set_nav_bar_button :right, title: "New", action: :new_todo
   end
 
+  def new_todo
+    # open NewTodoScreen
+  end
+
+  def table_data
+    [{
+      cells: Todo.all.map do |todo|
+        {
+          title: todo.title,
+          # subtitle: "subtitle goes here",
+          action: :show_todo,
+          arguments: { todo: model }
+        }
+      end
+    }]
+  end
+
+  def show_todo(args)
+    # open TodoScreen.new(args)
+  end
 
   # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it
   # is tag the views you need to restyle in your stylesheet, then only reapply the tagged views, like so:
