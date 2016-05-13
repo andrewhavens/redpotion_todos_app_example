@@ -7,7 +7,7 @@ class TodosScreen < PM::TableScreen
   end
 
   def new_todo
-    # open NewTodoScreen
+    open NewTodoScreen
   end
 
   def table_data
@@ -17,7 +17,7 @@ class TodosScreen < PM::TableScreen
           title: todo.title,
           # subtitle: "subtitle goes here",
           action: :show_todo,
-          arguments: { todo: model }
+          arguments: { todo: todo }
         }
       end
     }]
