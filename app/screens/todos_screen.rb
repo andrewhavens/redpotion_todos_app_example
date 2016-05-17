@@ -15,16 +15,22 @@ class TodosScreen < PM::TableScreen
       cells: Todo.all.map do |todo|
         {
           title: todo.title,
-          # subtitle: "subtitle goes here",
+          subtitle: ("Due: #{todo.due_date}" if todo.due_date),
           action: :show_todo,
-          arguments: { todo: todo }
+          arguments: { todo: todo },
+          editing_style: :delete
         }
       end
     }]
   end
 
   def show_todo(args)
-    # open TodoScreen.new(args)
+    open TodoDetailScreen.new(args)
+  end
+
+  def on_cell_deleted(cell, index_path)
+    cell[:arguments][:todo].destroy
+    app.data.save
   end
 
   # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it

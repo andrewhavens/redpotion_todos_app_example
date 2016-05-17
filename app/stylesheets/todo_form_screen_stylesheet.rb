@@ -1,4 +1,4 @@
-class NewTodoScreenStylesheet < ApplicationStylesheet
+class TodoFormScreenStylesheet < ApplicationStylesheet
   # Add your view stylesheets here. You can then override styles if needed,
   # example: include FooStylesheet
 

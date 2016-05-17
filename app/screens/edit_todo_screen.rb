@@ -1,6 +1,8 @@
-class NewTodoScreen < PM::XLFormScreen
-  title "New Todo"
+class EditTodoScreen < PM::XLFormScreen
+  title "Edit Todo"
   stylesheet TodoFormScreenStylesheet
+
+  attr_accessor :todo
 
   form_options required:  :asterisks, # add an asterisk to required fields
                on_save:   :'save_form:', # will be called when you touch save
@@ -13,17 +15,20 @@ class NewTodoScreen < PM::XLFormScreen
         {
           title: "Title",
           name: :title,
-          type: :text
+          type: :text,
+          value: todo.title
         },
         {
           title: "Due Date",
           name: :due_date,
-          type: :datetime
+          type: :datetime,
+          value: todo.due_date
         },
         {
           title: "Completed",
           name: :completed,
-          type: :check
+          type: :check,
+          value: todo.completed
         }
       ]
     }]
@@ -31,7 +36,7 @@ class NewTodoScreen < PM::XLFormScreen
 
   def save_form(values)
     dismiss_keyboard
-    Todo.create(values)
+    todo.update(values)
     app.data.save
     close
     # TODO: figure out how/when to refresh the table screen data
