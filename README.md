@@ -15,7 +15,8 @@ DataTableScreen generator:
 * Don't use DataTableScreen! Use a regular table screen for easier customization.
 * Maybe deprecate DataTableScreen and change the generator? Or create a new `cdq_table_screen` generator.
 * Command: `potion g cdq_table_screen todos`
-* Expected result after generator: [Link to compare branch](#)
+* [Expected result after generator](https://github.com/andrewhavens/redpotion_todos_app_example/blob/c2f0ab934fb7db350d3a38122342e7000c126c4c/app/screens/todos_screen.rb)
+* [More complete example with swipe to delete](https://github.com/andrewhavens/redpotion_todos_app_example/blob/d25dbc4b3cb7ecd999df6ebb8c4161b1ee3212d6/app/screens/todos_screen.rb)
 
 PM::XLFormScreen generator:
 * Using the generator could enable the commented out PM::XLForm gem in the `Gemfile`, run `bundle` and `rake pod:install`.
