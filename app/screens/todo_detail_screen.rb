@@ -15,6 +15,7 @@ class TodoDetailScreen < PM::Screen
     open EditTodoScreen.new(todo: todo)
   end
 
+  # Maybe this should be displayed as a table instead?
   # def table_data
   #   [{
   #     cells: [

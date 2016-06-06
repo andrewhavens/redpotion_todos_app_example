@@ -31,10 +31,9 @@ class NewTodoScreen < PM::XLFormScreen
 
   def save_form(values)
     dismiss_keyboard
-    Todo.create(values)
+    todo = Todo.create(values)
     app.data.save
-    close
-    # TODO: figure out how/when to refresh the table screen data
+    close(todo: todo)
   end
 
   def cancel_form

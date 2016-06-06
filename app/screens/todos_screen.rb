@@ -10,6 +10,10 @@ class TodosScreen < PM::TableScreen
     open NewTodoScreen
   end
 
+  def on_return(args = {})
+    update_table_data if args[:todo]
+  end
+
   def table_data
     [{
       cells: Todo.all.map do |todo|

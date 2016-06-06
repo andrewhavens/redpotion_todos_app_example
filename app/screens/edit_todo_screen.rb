@@ -36,10 +36,9 @@ class EditTodoScreen < PM::XLFormScreen
 
   def save_form(values)
     dismiss_keyboard
-    todo.update(values)
+    todo.update(values) # FIXME: the model doesn't seem to have an update method?
     app.data.save
-    close
-    # TODO: figure out how/when to refresh the table screen data
+    close(todo: todo)
   end
 
   def cancel_form
