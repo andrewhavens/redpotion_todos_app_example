@@ -22,6 +22,6 @@ PM::XLFormScreen generator:
 * Using the generator could enable the commented out PM::XLForm gem in the `Gemfile`, run `bundle` and `rake pod:install`.
 * Command: `potion g form_screen new_todo title:string due_date:datetime completed:boolean`
 * Command: `potion g form_screen edit_todo title:string due_date:datetime completed:boolean`
+* [Expected result after generator](https://github.com/andrewhavens/redpotion_todos_app_example/blob/a729dd58b74000374450b037d0d35dfdd130d644/app/screens/edit_todo_screen.rb)
 * Ideally, we create a form screen that can be shared between states.
 * Command: `potion g form_screen todo_form title:string due_date:datetime completed:boolean`
-* Expected result after generator: [Link to compare branch](#)
