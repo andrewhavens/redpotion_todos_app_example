@@ -9,7 +9,7 @@ Scaffolding generator:
 
 Model generator:
 * Command: `potion g model todo title:string completed:boolean due_date:datetime`
-* Expected result after generator: [Link to compare branch](#)
+* [Expected result after generator](https://github.com/andrewhavens/redpotion_todos_app_example/commit/510e8b1675ad7a44eba44efdd4b3fea987976bc0)
 
 DataTableScreen generator:
 * Don't use DataTableScreen! Use a regular table screen for easier customization.
